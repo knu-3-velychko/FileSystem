@@ -10,7 +10,7 @@
 
 class FileSystem {
 public:
-    FileSystem();
+    explicit FileSystem(std::istream &stream);
 
     ~FileSystem();
 

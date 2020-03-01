@@ -5,6 +5,8 @@
 #ifndef FILESYSTEM_IOSYSTEM_H
 #define FILESYSTEM_IOSYSTEM_H
 
+#include <iostream>
+#include <exception>
 
 class IOSystem {
 public:
