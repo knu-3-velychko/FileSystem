@@ -29,11 +29,14 @@ public:
 
 	int getSlot();
 
-	int status();
+	int getStatus();
 
 	void flush();
 
 private:
+
+	const int SIZE = 64;
+
 	int currentPosition;
 	int descriptor;
 	int length;
