@@ -1,7 +1,3 @@
-//
-// Created by My Surface on 3/1/2020.
-//
-
 #ifndef FILESYSTEM_IOSYSTEM_H
 #define FILESYSTEM_IOSYSTEM_H
 

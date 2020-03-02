@@ -1,12 +1,12 @@
-//
-// Created by My Surface on 3/1/2020.
-//
-
 #ifndef FILESYSTEM_FILESYSTEM_H
 #define FILESYSTEM_FILESYSTEM_H
 
 #include "IOSystem.h"
+#include "OFT.h"
 #include <iostream>
+#include <exception>
+#include <io.h>
+#include <string>
 
 class FileSystem {
 public:
@@ -65,6 +65,7 @@ private:
     IOSystem *ldisk;
     unsigned int *mask;
     int *descriptor;
+    OFT* oft;
 };
 
 
