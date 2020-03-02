@@ -6,8 +6,19 @@ using namespace std;
 
 int main() {
     std::ifstream ifs;
-    ifs.open(R"(C:\Users\My Surface\Documents\Projects\FileSystem\FileSystem\input.txt)", std::ios::in);
+    std::ofstream ofs;
+    std::string path = R"(C:\Users\My Surface\Documents\Projects\FileSystem\FileSystem\)";
+
+    ifs.open(path + "input.txt", std::ios::in);
+    ofs.open(path + "output.txt", std::ios::out);
+
+    auto *shell = new Shell(&ifs, &ofs);
+    shell->read();
 
     ifs.close();
+    ofs.close();
+
+    delete shell;
+    
     return 0;
 }

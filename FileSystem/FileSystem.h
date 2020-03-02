@@ -3,18 +3,19 @@
 
 #include "IOSystem.h"
 #include "OFT.h"
-#include <iostream>
 #include <exception>
 #include <io.h>
 #include <string>
+#include <sstream>
+#include <iostream>
 
 class FileSystem {
 public:
-    explicit FileSystem(std::istream &stream);
+    FileSystem(std::ostream *out);
 
     ~FileSystem();
 
-    void create(char *fName);
+    bool create(char *fName);
 
     bool destroy(char *fName);
 
@@ -32,22 +33,15 @@ public:
 
     std::string init();
 
-    std::string init(std::string fName);
+    std::string init(const std::string &fName);
 
-    std::string save(std::string fName);
-
+    bool save(const std::string& fName);
 
 
     //helper functions
-
-    void show_bitmap();
-
     int *get_desc(int d);
 
     int set_desc(int d);
-
-    void show_desc();
-
 
     int alloc_bitmap();
 
@@ -55,17 +49,17 @@ public:
 
     int alloc_dir();
 
-    int seek_block(int index, int slot);
-
 
     int search_dir(char *dName);
 
 private:
+    std::ostream *out;
+
     char *buffer;
     IOSystem *ldisk;
     unsigned int *mask;
     int *descriptor;
-    OFT* oft;
+    OFT *oft;
 };
 
 

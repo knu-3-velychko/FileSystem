@@ -1,6 +1,7 @@
 #ifndef FILESYSTEM_SHELL_H
 #define FILESYSTEM_SHELL_H
 
+#include "FileSystem.h"
 #include <iostream>
 #include <sstream>
 #include <memory>
@@ -18,6 +19,8 @@ public:
 private:
     std::istream *in;
     std::ostream *out;
+    FileSystem *fileSystem;
+
 
     bool recognizeCommand(std::vector<std::string> &command);
 
@@ -37,11 +40,11 @@ private:
 
     void directory(std::vector<std::string> &command);
 
-    void createDisk(std::vector<std::string> &command);
+    void init(std::vector<std::string> &command);
 
     void save(std::vector<std::string> &command);
 
-    void error(const std::string& message);
+    void error(const std::string &message);
 };
 
 
