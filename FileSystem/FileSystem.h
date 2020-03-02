@@ -2,7 +2,11 @@
 #define FILESYSTEM_FILESYSTEM_H
 
 #include "IOSystem.h"
+#include "OFT.h"
 #include <iostream>
+#include <exception>
+#include <io.h>
+#include <string>
 
 class FileSystem {
 public:
@@ -61,6 +65,7 @@ private:
     IOSystem *ldisk;
     unsigned int *mask;
     int *descriptor;
+    OFT* oft;
 };
 
 
